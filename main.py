@@ -23,7 +23,7 @@ app.mount("/static", StaticFiles(directory="static", html=True), name="static")
          name="Rest Api For Health Check",
          description="Rest Api 가 살아 있는지 확인 하는 Rest Api"
          )
-def read_root():
+def root():
     return {"Hello": "Fast-Jin"}
 
 
@@ -68,7 +68,6 @@ class TestRes(BaseModel):
 def test(testReq: TestReq):
     request_json = dict(testReq)
     logging.debug('request_json : %s', request_json)
-    print(request_json)
     result = {'status_code': 200, 'status_message': "success"}
 
     testRes = TestRes(**result)
