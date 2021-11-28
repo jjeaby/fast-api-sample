@@ -44,4 +44,3 @@ class Connect:
 
 
 Base = declarative_base()
-database = Connect()
